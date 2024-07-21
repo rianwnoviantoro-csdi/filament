@@ -19,6 +19,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
+use Njxqlus\FilamentProgressbar\FilamentProgressbarPlugin;
 
 class DashboardPanelProvider extends PanelProvider
 {
@@ -65,7 +66,8 @@ class DashboardPanelProvider extends PanelProvider
                         navigationGroup: 'Settings', // Sets the navigation group for the My Profile page (default = null)
                         hasAvatars: false, // Enables the avatar upload form component (default = false)
                         slug: 'my-profile' // Sets the slug for the profile page (default = 'my-profile')
-                    )
+                    ),
+                FilamentProgressbarPlugin::make()->color('#fca311')
             ]);
     }
 }
