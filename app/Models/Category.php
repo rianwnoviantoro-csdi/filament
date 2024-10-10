@@ -13,4 +13,9 @@ class Category extends Model
     protected $guarded = [];
 
     protected $dates = ['deleted_at'];
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'category_id'); // Make sure 'category' is the foreign key
+    }
 }

@@ -34,8 +34,8 @@ class CategoryResource extends Resource
     {
         return $form
             ->schema([
-                Section::make('Create Category')
-                    ->description('Create new category for blog post')
+                Section::make('Category')
+                    ->description(fn ($record) => $record ? 'Edit the category for the blog post' : 'Create new category for blog post')
                     ->schema([
                         TextInput::make('name')
                             ->required()
@@ -76,7 +76,7 @@ class CategoryResource extends Resource
                     ->toggleable()
             ])
             ->filters([
-                TrashedFilter::make(),
+                // TrashedFilter::make(),
             ])
             ->actions([
                 EditAction::make(),

@@ -10,6 +10,7 @@ class GeneralSettings extends Settings
     public ?string $brand_logo;
     public bool $site_active;
     public ?string $site_favicon;
+    public ?string $banner;
 
     public ?string $vision_and_mission_banner;
     public ?string $vision_and_mission_description;

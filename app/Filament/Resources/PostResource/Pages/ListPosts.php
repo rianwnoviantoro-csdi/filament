@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Filament\Resources\CategoryResource\Pages;
+namespace App\Filament\Resources\PostResource\Pages;
 
-use App\Filament\Resources\CategoryResource;
-use App\Models\Category;
+use App\Filament\Resources\PostResource;
+use App\Models\Post;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Resources\Pages\ListRecords\Tab;
+use Illuminate\Database\Query\Builder;
 
-class ListCategories extends ListRecords
+class ListPosts extends ListRecords
 {
-    protected static string $resource = CategoryResource::class;
+    protected static string $resource = PostResource::class;
 
     protected function getHeaderActions(): array
     {
@@ -24,7 +25,7 @@ class ListCategories extends ListRecords
         return [
             'Active' => Tab::make(),
             'Trash' => Tab::make()
-                ->badge(Category::onlyTrashed()->count())
+                ->badge(Post::onlyTrashed()->count())
                 ->modifyQueryUsing(fn ($query) => $query->onlyTrashed())
         ];
     }

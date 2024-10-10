@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->text('thumbnail')->nullable();
+            $table->string('title');
+            $table->string('slug')->unique();
+            $table->text('content')->nullable();
+            $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnDelete();
+            $table->foreignId('author_id')->constrained('users')->cascadeOnDelete();
+            $table->boolean('is_published')->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

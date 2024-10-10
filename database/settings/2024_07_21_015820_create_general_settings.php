@@ -17,6 +17,7 @@ return new class extends SettingsMigration
         $this->migrator->add('general.introduction_description', 'lorem ipsum dolor sit amet');
         $this->migrator->add('general.organizational_structure_banner', null);
         $this->migrator->add('general.organizational_structure_description', 'lorem ipsum dolor sit amet');
+        $this->migrator->add('general.banner', null);
         $this->migrator->add('general.site_favicon', 'sites/logo.ico');
         $this->migrator->add('customers.new_installation_banner', null);
         $this->migrator->add('customers.new_installation_description', 'lorem ipsum dolor sit amet');
